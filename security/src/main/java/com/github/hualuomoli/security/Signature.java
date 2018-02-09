@@ -14,7 +14,7 @@ import java.security.spec.X509EncodedKeySpec;
  */
 public class Signature {
 
-    private static final String TAG = "Signature";
+    private static final String TAG = "com.github.hualuomoli.security.Signature";
 
     private static final String CHARSET = "UTF-8";
 

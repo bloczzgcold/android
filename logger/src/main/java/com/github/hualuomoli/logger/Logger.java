@@ -101,7 +101,7 @@ public class Logger {
         if (!isVerboseEnabled()) {
             return;
         }
-        showVerbose(tag, null, t);
+        showVerbose(tag, msg, t);
     }
 
     /**
@@ -204,7 +204,7 @@ public class Logger {
         if (!isDebugEnabled()) {
             return;
         }
-        showDebug(tag, null, t);
+        showDebug(tag, msg, t);
     }
 
     /**
@@ -307,7 +307,7 @@ public class Logger {
         if (!isInfoEnabled()) {
             return;
         }
-        showInfo(tag, null, t);
+        showInfo(tag, msg, t);
     }
 
     /**
@@ -410,7 +410,7 @@ public class Logger {
         if (!isWarnEnabled()) {
             return;
         }
-        showWarn(tag, null, t);
+        showWarn(tag, msg, t);
     }
 
     /**
@@ -513,7 +513,7 @@ public class Logger {
         if (!isErrorEnabled()) {
             return;
         }
-        showError(tag, null, t);
+        showError(tag, msg, t);
     }
 
     /**

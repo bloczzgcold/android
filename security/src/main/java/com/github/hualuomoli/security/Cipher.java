@@ -4,6 +4,7 @@ import com.github.hualuomoli.codec.Base64;
 import com.github.hualuomoli.logger.Logger;
 
 import javax.crypto.spec.SecretKeySpec;
+
 import java.io.UnsupportedEncodingException;
 
 /**
@@ -11,7 +12,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class Cipher {
 
-    private static final String TAG = "Cipher";
+    private static final String TAG = "com.github.hualuomoli.security.Cipher";
 
     private static final String CHARSET = "UTF-8";
 
