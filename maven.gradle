@@ -48,7 +48,6 @@ task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
     from androidJavadocs.destinationDir
 }
 
-
 // 构建
 artifacts {
     archives androidSourcesJar

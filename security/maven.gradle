@@ -1,0 +1,34 @@
+apply from: '../maven.gradle'
+
+// 订单当前模块信息
+maven.artifactId = 'hualuomoli-security' /** 模块名 */
+maven.packaging = 'aar'/** 打包文件类型 */
+maven.description = '安全认证' /** 描述 */
+
+// 发布
+uploadArchives {
+    repositories {
+        mavenDeployer {
+
+            pom.project {
+                groupId maven.groupId
+                artifactId maven.artifactId
+                version maven.version
+                packaging maven.packaging
+                description maven.description
+            }
+
+            // 发布版
+            repository(url: distribution.release.url) {
+                authentication(userName: distribution.release.userName, password: distribution.release.password)
+            }
+
+            // 快照版
+            snapshotRepository(url: distribution.snapshot.url) {
+                authentication(userName: distribution.snapshot.userName, password: distribution.snapshot.password)
+            }
+            // end
+
+        }
+    }
+}
