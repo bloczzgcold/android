@@ -27,6 +27,6 @@ android {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
-    compileOnly "com.github.hualuomoli:hualuomoli-logger:${PROJECT_VERSION}"
-    compileOnly "com.github.hualuomoli:hualuomoli-codec:${PROJECT_VERSION}"
+    implementation project(':codec')
+    implementation project(':logger')
 }
