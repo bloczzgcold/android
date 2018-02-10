@@ -1,4 +1,4 @@
-package com.github.hualuomoli.sample.security;
+package com.github.hualuomoli.android.security;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

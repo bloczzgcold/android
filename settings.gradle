@@ -1,1 +1,1 @@
-include ':app', ':logger', ':codec', ':security', ':sample', ':logger-android'
+include ':app', ':logger', ':codec', ':security', ':logger-android'

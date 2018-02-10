@@ -1,4 +1,4 @@
-package com.github.hualuomoli.sample.logger;
+package com.github.hualuomoli.android.logger;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.github.hualuomoli.logger.Level;
 import com.github.hualuomoli.logger.Logger;
+import com.github.hualuomoli.logger.android.AndroidLogger;
 import com.github.hualuomoli.sample.R;
 
 public class LoggerActivity extends AppCompatActivity {
@@ -25,6 +26,7 @@ public class LoggerActivity extends AppCompatActivity {
 
         // 默认输出所有日志
         Logger.setLevel(Level.ALL);
+        Logger.setLogger(new AndroidLogger());
 
         group = findViewById(R.id.logger_level);
 
