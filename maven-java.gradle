@@ -1,0 +1,16 @@
+apply plugin: 'maven-publish'
+apply from: rootProject.getRootDir().getAbsolutePath() + '/maven-config.gradle'
+
+// 源码
+task sourceJar(type: Jar) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+// 文档
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    javadoc.options.encoding = "UTF-8"
+    from javadoc.destinationDir
+}
+

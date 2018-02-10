@@ -1,34 +1,44 @@
-apply from: '../maven.gradle'
+apply from: rootProject.getRootDir().getAbsolutePath() + '/maven-java.gradle'
 
-// 订单当前模块信息
-maven.artifactId = 'hualuomoli-logger' /** 模块名 */
-maven.packaging = 'aar'/** 打包文件类型 */
-maven.description = '日志输出' /** 描述 */
+// 项目名
+var.maven.artifactId = 'hualuomoli-logger'
 
 // 发布
-uploadArchives {
-    repositories {
-        mavenDeployer {
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId var.maven.groupId
+            artifactId var.maven.artifactId
+            version var.maven.version
+            //若是war包，就写components.web,若是jar包，就写components.java
+            from components.java
 
-            pom.project {
-                groupId maven.groupId
-                artifactId maven.artifactId
-                version maven.version
-                packaging maven.packaging
-                description maven.description
+            artifact(sourceJar) {
+                classifier = 'sources'
             }
-
-            // 发布版
-            repository(url: distribution.release.url) {
-                authentication(userName: distribution.release.userName, password: distribution.release.password)
+            artifact(javadocJar) {
+                classifier = 'javadoc'
             }
-
-            // 快照版
-            snapshotRepository(url: distribution.snapshot.url) {
-                authentication(userName: distribution.snapshot.userName, password: distribution.snapshot.password)
-            }
-            // end
 
         }
+
     }
+    repositories {
+
+        maven {
+
+            if (var.maven.version.endsWith('-SNAPSHOT')) {
+                url = var.distribution.url.snapshot
+            } else {
+                url = var.distribution.url.release
+            }
+
+            credentials {
+                username var.distribution.username
+                password var.distribution.password
+            }
+        }
+    }
+
 }
+

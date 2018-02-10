@@ -1,32 +1,10 @@
-apply plugin: 'com.android.library'
+apply plugin: 'java-library'
 apply from: './maven.gradle'
 
-android {
-    compileSdkVersion 26
-
-
-
-    defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-}
-
 dependencies {
-    testImplementation 'junit:junit:4.12'
     implementation project(':codec')
     implementation project(':logger')
 }
+
+sourceCompatibility = var.java.sourceCompatibility
+targetCompatibility = var.java.targetCompatibility

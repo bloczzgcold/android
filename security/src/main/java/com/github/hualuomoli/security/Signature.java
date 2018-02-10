@@ -23,6 +23,7 @@ public class Signature {
      *
      * @param privateKey   私钥
      * @param keyAlgorithm 密钥算法
+     * @param algorithm    算法
      * @param origin       签名原文
      * @return 签名, 如果获取签名失败返回null
      */
@@ -35,6 +36,7 @@ public class Signature {
      *
      * @param privateKey   私钥
      * @param keyAlgorithm 密钥算法
+     * @param algorithm    算法
      * @param origin       签名原文
      * @param charset      数据编码
      * @return 签名, 如果获取签名失败返回null

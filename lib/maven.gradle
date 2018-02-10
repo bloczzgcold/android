@@ -1,9 +1,9 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 apply from: rootProject.getRootDir().getAbsolutePath() + '/maven-java.gradle'
 
-// 项目名
-var.maven.artifactId = 'hualuomoli-security'
+var.maven.artifactId = 'lib'
 
-// 发布
 publishing {
     publications {
         maven(MavenPublication) {

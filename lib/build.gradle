@@ -1,0 +1,10 @@
+apply plugin: 'java-library'
+apply plugin: 'maven-publish'
+apply from: './maven.gradle'
+
+dependencies {
+}
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+

@@ -1,7 +1,5 @@
 package com.github.hualuomoli.logger;
 
-import android.util.Log;
-
 import com.github.hualuomoli.logger.helpers.FormattingTuple;
 import com.github.hualuomoli.logger.helpers.MessageFormatter;
 
@@ -14,9 +12,14 @@ public class Logger {
      * 应用级别，默认关闭
      */
     private static Level level = Level.OFF;
+    private static ILogger logger = new NopLogger();
 
     public static void setLevel(Level level) {
         Logger.level = level;
+    }
+
+    public static void setLogger(ILogger logger) {
+        Logger.logger = logger;
     }
 
     /**
@@ -116,9 +119,9 @@ public class Logger {
             msg = "";
         }
         if (t == null) {
-            Log.v(tag, msg);
+            logger.verbose(tag, msg);
         } else {
-            Log.v(tag, msg, t);
+            logger.verbose(tag, msg, t);
         }
     }
 
@@ -219,9 +222,9 @@ public class Logger {
             msg = "";
         }
         if (t == null) {
-            Log.d(tag, msg);
+            logger.debug(tag, msg);
         } else {
-            Log.d(tag, msg, t);
+            logger.debug(tag, msg, t);
         }
     }
 
@@ -322,9 +325,9 @@ public class Logger {
             msg = "";
         }
         if (t == null) {
-            Log.i(tag, msg);
+            logger.info(tag, msg);
         } else {
-            Log.i(tag, msg, t);
+            logger.info(tag, msg, t);
         }
     }
 
@@ -425,9 +428,9 @@ public class Logger {
             msg = "";
         }
         if (t == null) {
-            Log.w(tag, msg);
+            logger.warn(tag, msg);
         } else {
-            Log.w(tag, msg, t);
+            logger.warn(tag, msg, t);
         }
     }
 
@@ -528,9 +531,9 @@ public class Logger {
             msg = "";
         }
         if (t == null) {
-            Log.e(tag, msg);
+            logger.error(tag, msg);
         } else {
-            Log.e(tag, msg, t);
+            logger.error(tag, msg, t);
         }
     }
 
