@@ -1,4 +1,4 @@
-package com.github.hualuomoli.android.security;
+package com.github.hualuomoli.demo.security;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.github.hualuomoli.codec.Base64;
+import com.github.hualuomoli.demo.R;
 import com.github.hualuomoli.logger.Level;
 import com.github.hualuomoli.logger.Logger;
-import com.github.hualuomoli.sample.R;
 import com.github.hualuomoli.security.AES;
 import com.github.hualuomoli.security.RSA;
 

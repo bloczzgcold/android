@@ -1,4 +1,4 @@
-package com.github.hualuomoli.android.logger;
+package com.github.hualuomoli.demo.logger;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,10 @@ import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.github.hualuomoli.demo.R;
 import com.github.hualuomoli.logger.Level;
 import com.github.hualuomoli.logger.Logger;
 import com.github.hualuomoli.logger.android.AndroidLogger;
-import com.github.hualuomoli.sample.R;
 
 public class LoggerActivity extends AppCompatActivity {
 
