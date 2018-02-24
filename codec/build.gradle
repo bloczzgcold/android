@@ -1,5 +1,12 @@
 apply plugin: 'java-library'
-apply from: './maven.gradle'
+apply plugin: 'maven-publish'
 
-sourceCompatibility = var.java.sourceCompatibility
-targetCompatibility = var.java.targetCompatibility
+// 配置参数
+ext {
+    maven_artifactId = 'hualuomoli-codec'
+}
+
+apply from: rootProject.file('maven-java.gradle')
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"

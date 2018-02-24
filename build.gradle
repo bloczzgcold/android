@@ -18,12 +18,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-            url "http://nexus.hualuomoli.cn/content/repositories/android-releases/"
-        }
-        maven {
-            url "http://nexus.hualuomoli.cn/content/repositories/android-snapshots/"
-        }
     }
 }
 

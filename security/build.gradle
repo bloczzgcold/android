@@ -1,10 +1,17 @@
 apply plugin: 'java-library'
-apply from: './maven.gradle'
+apply plugin: 'maven-publish'
+
+// 配置参数
+ext {
+    maven_artifactId = 'hualuomoli-security'
+}
+apply from: rootProject.file('maven-java.gradle')
 
 dependencies {
     implementation project(':codec')
     implementation project(':logger')
 }
 
-sourceCompatibility = var.java.sourceCompatibility
-targetCompatibility = var.java.targetCompatibility
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+

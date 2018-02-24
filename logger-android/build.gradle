@@ -1,5 +1,12 @@
 apply plugin: 'com.android.library'
-apply from: './maven.gradle'
+apply plugin: 'maven'
+
+// 配置参数
+ext {
+    maven_artifactId = 'hualuomoli-logger-android'
+    maven_description = 'Android日志'
+}
+apply from: rootProject.file('maven-android.gradle')
 
 android {
     compileSdkVersion 26
